@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+	<link rel="stylesheet" href="css/wrapper.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+</head>
+<body>
+	<div class="content">
+		<!-- menu -->
+		<nav>
+			<div class="logo">
+				<p>fashion.</p>
+			</div>
+			<div class="menu">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Store</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+		</nav>
+		<!-- text and image -->
+		<div class="wrapper">
+			<img src="pictures/png/men.png" alt="">
+			<div class="container_text">
+				<div class="h1">
+					<h1>TODAY ONLY</h1>
+				</div>
+				<div class="h1">
+					<h1>70% OFF</h1>
+				</div>
+				<div class="p">
+					<p class="">Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit, sed do eiusmod tempor<br>incididunt ut labore et dolore magna aliqua</p>
+				</div>
+				<a href="#">LEARN MORE</a>
+			</div>
+		</div>
+	</div>
+	<img src="pictures/icon/crest.png" alt="" class="crest crest_1">
+	<img src="pictures/icon/crest.png" alt="" class="crest crest_2">
+	<img src="pictures/icon/crest.png" alt="" class="crest crest_3">
+	<div class="container_figure">
+		<img src="pictures/icon/trigle.png" alt="" class="figure triagle">
+		<img src="pictures/icon/circle.png" alt="" class="figure circle">
+		<img src="pictures/icon/cube.png" alt="" class="figure cube">
+		<img src="pictures/icon/lightning.png" alt="" class="figure lightning">
+		<img src="pictures/icon/star.png" alt="" class="figure star">
+	</div>
+	<script>
+		gsap.from('li',1, {
+    		y: -250,
+    		stagger: .7,
+    		opacity:0
+		});
+		gsap.to('.logo p',1,{
+			delay: 2,
+			opacity:1
+		});
+		let h1 = gsap.timeline();
+		h1.from('.h1 h1',1,{
+			delay: 2,
+			y:200,
+			skewY: 20,
+			stagger: .8
+		});
+		h1.to('.h1',1,{
+			overflow: 'visible'
+		});
+		h1.to('.h1 h1',1,{
+			repeat:-1,
+			yoyo:true,
+			textShadow:'0 0 2px #fff,0 0 4px #fff,0 0 15px #9400D3,0 0 20px #9400D3,0 0 40px #9400D3,0 0 60px #9400D3'
+		});
+		gsap.from('.p p', 1, {
+			delay: 2,
+			y:-200,
+			opacity:0
+		});
+		gsap.to('.container_text>a',.5,{
+			opacity:1,
+			delay: 3
+		});
+		gsap.to('.crest_1',3, {
+			delay: 3,
+			ease: "elastic.inOut(1, 0.3)",
+			x:30,
+			y: 20,
+			repeat:-1,
+			yoyo:true
+		});
+		gsap.to('.crest_2',3, {
+			delay: 3.5,
+			ease: "elastic.inOut(1, 0.3)",
+			x:-20,
+			y: -30,
+			repeat:-1,
+			yoyo:true
+		});
+		gsap.to('.crest_3',3, {
+			delay: 4,
+			ease: "elastic.inOut(1, 0.3)",
+			x: -20,
+			y: 30,
+			repeat:-1,
+			yoyo:true
+		});
+		gsap.to('.crest_1',3, {
+			opacity:1,
+			delay:.5
+		});
+		gsap.to('.crest_2',3, {
+			opacity:1,
+			delay:.8
+		});
+		gsap.to('.crest_3',3, {
+			opacity:1,
+			delay:1.1
+		});
+		gsap.to('.figure',4,{
+			opacity:1,
+			stagger: .5
+		})
+		gsap.to('.wrapper img',1,{
+			opacity:1
+		})
+	</script>
+</body>
+</html>
